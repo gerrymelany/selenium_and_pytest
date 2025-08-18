@@ -14,7 +14,8 @@ class BasePage:
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     def click_element(self, locator):
-        self.wait_for_element(locator).click()
+        element = WebDriverWait(self.driver, timeout=10).until(EC.element_to_be_clickable(locator))
+        element.click()
 
     def type_text(self, locator, text):
         element = self.wait_for_element(locator)
@@ -42,3 +43,12 @@ class BasePage:
     def hover_over_element(self, locator):
         element = self.wait_for_element(locator)
         ActionChains(self.driver).move_to_element(element).perform()
+
+
+    def get_select_options(self, locator):
+        dropdown = Select(self.wait_for_element(locator))
+        return [option.text for option in dropdown.options]
+
+    def reload_page(self):
+        self.driver.refresh()
+
