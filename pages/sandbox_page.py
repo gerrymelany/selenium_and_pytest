@@ -14,20 +14,20 @@ class SandboxPage(BasePage):
         self.navigate_to("https://thefreerangetester.github.io/sandbox-automation-testing/")
 
     def click_enviar(self):
-        self.click(self.enviar_button_locator)
+        self.click_element(self.enviar_button_locator)
 
     def click_dynamic_button(self):
-        self.click(self.dynamic_id_button_locator)
+        self.click_element(self.dynamic_id_button_locator)
 
     def select_checkbox(self, label_text):
         assert label_text in ["Pizza", "Hamburguesa", "Pasta", "Helado", "Torta"], "Las opciones aceptadas son: Pizza, Hamburguesa, Pasta, Helado, Torta."
         checkbox_locator = (By.XPATH, f"//label[contains(.,'{label_text}')]")
-        self.select_element(checkbox_locator)
+        self.click_element(checkbox_locator)
 
     def select_radio_button(self, option):
         assert  option in ["Si", "No"], "Opción inválida. Use 'Si' o 'No'."
         radio_button_locator = (By.XPATH, f"//label[@class='form-check-label' and contains(text(),'{option}')]")
-        self.select_element(radio_button_locator)
+        self.click_element(radio_button_locator)
 
     def select_deporte(self, deporte):
         assert deporte in ["Fútbol", "Básquet", "Tenis", "Natación"], "Deporte inválido. Use 'Fútbol', 'Básquet', 'Tenis' o 'Natación'."

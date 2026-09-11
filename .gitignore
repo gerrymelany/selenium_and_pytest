@@ -1,0 +1,22 @@
+# Entorno virtual y caches de Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDEs y configuracion local
+.idea/
+.vscode/
+
+# Variables de entorno y secretos locales
+.env
+.env.*
+!.env.example
+
+# Cobertura y artefactos de pruebas
+.coverage
+htmlcov/
+coverage.xml
+test-results/

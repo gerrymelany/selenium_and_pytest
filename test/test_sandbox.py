@@ -26,7 +26,7 @@ def test_checkbox_seleccionable_pizza(sandbox_page):
     sandbox_page.select_checkbox("Pizza")
 
 @pytest.mark.sandbox
-def test_checkbox_seleccionable_pizza(sandbox_page):
+def test_checkbox_seleccionable_helado(sandbox_page):
     sandbox_page.navigate_sandbox()
     sandbox_page.select_checkbox("Helado")
 
